@@ -23,8 +23,13 @@ dependencies {
 
 }
 
-test {
+task testng(type: Test) {
     useTestNG() {
-        suites "src/test/resources/testng.xml"
+        suites 'testng.xml'
     }
+}
+
+test {
+    useTestNG()
+    testLogging.showStandardStreams = true
 }
